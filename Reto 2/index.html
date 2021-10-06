@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--las etiquetas meta ayudan al pocisinamiento ceo-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--compativilidad con el navegador internet explore edge-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Para que se adacte a la resolucion de la pantalla-->
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Paraiso Tropical</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Paraiso Tropical</h1>
+    </header>
+
+    <main>
+        <section id="seccion1" class="seccion">
+            <div class="container">
+                <h2 class="subtitulo">Cabañas</h2>
+                <form class="form" autocomplete="on">
+                    <div class="grupo-input">
+                        <input class="input" type="number" id="idx" placeholder="solo lectura" readonly value="valor por defecto">
+                        <input class="input" type="number" id="idd" placeholder="deshabilitado" disabled>
+                        <input class="input" type="number" id="id" placeholder="Id">
+                        <input class="input" type="text" id="brand" placeholder="Marca">
+                        <input class="input" type="number" id="rooms" placeholder="Cuartos">
+                        <input class="input" type="number" id="category_id" placeholder="Categoria">
+                        <input class="input" type="text" id="name" placeholder="Nombre">
+                    </div>
+                    
+                    <div class="grupo-btn">
+                        <button type="submit" class="botones" onclick="guardarCabin()">Guardar</button>
+                        <button type="submit" class="botones" onclick="editarCabin()">Actualizar</button>
+                        <!-- <button class="botones" onclick="traerCabin()">Ver</button>         -->
+                    </div>
+                </form>
+                
+                <div class="tabla">  		
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>MARCA</th>
+                                <th>CUARTOS</th>
+                                <th>CATEGORIA</th>
+                                <th>NOMBRE</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultado">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>Grupo G37 - Equipo 6</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

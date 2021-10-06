@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+}
+
+.titulo{
+    font-family: 'Ephesis', cursive, Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 40px;
+    background: #244dd3c5;
+    text-align: center;
+    padding: 5px;
+}
+
+/** MAIN***/
+
+#seccion1{
+    background: #f8f8f8;
+}
+
+.seccion{
+    width: 100%;
+    height: auto;    
+}
+
+.container{
+    padding: 50px 0;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.subtitulo{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form{
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 300px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.grupo-input{
+    width: 100%;
+}
+
+.grupo-btn{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.botones{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 10px;
+}
+
+.btn{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.tabla{
+    width: 100%;
+    height: auto;
+    margin-top: 45px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+}
+
+table{    
+    width: 90%; 
+    margin: auto;
+    font-size: 12px;    
+    text-align: center;    
+    border-collapse: collapse;
+    overflow:auto;  
+    display: table;
+}
+
+th{     
+    font-size: 13px;     
+    font-weight: normal;     
+    padding: 8px;     
+    background: #244dd3c5;
+    border-bottom: 1px solid #fff; 
+    color: #fff; 
+    border-collapse: collapse; 
+}   
+
+td{    
+    padding: 8px;     
+    background: #fff;     
+    border-bottom: 1px solid #f2f2f2;
+    color: #111;    
+    border-top: 1px solid transparent; 
+    border-collapse: collapse; 
+}
+
+tr:hover td{ 
+    background: #d0dafd; 
+    color: #339; 
+}
+
+footer{
+    background: #244dd3c5;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
