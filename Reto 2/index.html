@@ -14,6 +14,13 @@
 <body>
     <header>
         <h1 class="titulo">Paraiso Tropical</h1>
+        <!-- <nav class="menu">
+            <ul class="lista">
+                <li class="items"><a class="link" href="#seccion1">Cabañas</a></li>
+                <li class="items"><a class="link" href="#seccion2">Cliente</a></li>
+                <li class="items"><a class="link" href="#seccion3">Mensajes</a></li>
+            </ul>             
+        </nav> -->
     </header>
 
     <main>
@@ -22,8 +29,6 @@
                 <h2 class="subtitulo">Cabañas</h2>
                 <form class="form" autocomplete="on">
                     <div class="grupo-input">
-                        <!-- <input class="input" type="number" id="idx" placeholder="solo lectura" readonly value="valor por defecto">
-                        <input class="input" type="number" id="idd" placeholder="deshabilitado" disabled> -->
                         <input class="input" type="number" id="id" placeholder="Id">
                         <input class="input" type="text" id="brand" placeholder="Marca">
                         <input class="input" type="number" id="rooms" placeholder="Cuartos">
@@ -32,9 +37,8 @@
                     </div>
                     
                     <div class="grupo-btn">
-                        <button type="submit" class="botones" onclick="guardarCabin()">Guardar</button>
-                        <button type="submit" class="botones" onclick="editarCabin()">Actualizar</button>
-                        <!-- <button class="botones" onclick="traerCabin()">Ver</button>         -->
+                        <button type="submit" id="guardarCab" class="botones" onclick="guardarCabin()">Guardar</button>
+                        <button type="submit" id="actualizarCabin" class="botones" onclick="editarCabin()">Actualizar</button>
                     </div>
                 </form>
                 
@@ -58,6 +62,44 @@
                 </div>
             </div>
         </section>
+
+        <!-- <section id="seccion2" class="seccion">
+            <div class="container">
+                <h2 class="subtitulo">Registro de clientes</h2>
+                <div class="form">
+                    <div class="grupo-input">
+                        <input class="input" type="number" id="id_client" placeholder="Id">
+                        <input class="input" type="text" id="name_client" placeholder="Nombre">
+                        <input class="input" type="text" id="email_client" placeholder="Email">
+                        <input class="input" type="number" id="age_client" placeholder="Edad">
+                    </div>
+                    
+                    <div class="grupo-btn">
+                        <button class="botones" onclick="guardarClient()">Guardar</button>
+                        <button class="botones" onclick="editarClient()">Actualizar</button>
+                    </div>
+                </div>
+                
+                <div class="tabla">  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>NOMBRE</th>
+                                <th>EMAIL</th>
+                                <th>EDAD</th>
+                                <th>GET ID</th>
+                                <th>BORRAR</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody id="resultadoClient">
+    
+                        </tbody>
+                    </table>		
+                </div>                
+            </div>
+        </section> -->
     </main>
 
     <footer>

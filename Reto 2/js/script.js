@@ -1,4 +1,5 @@
 traerCabin();
+traerClient();
 
 function traerCabin(){
     $.ajax({
@@ -7,12 +8,13 @@ function traerCabin(){
         datatype: "JSON",
         success:function(respuesta){
             console.log(respuesta);
-            mostarCabin(respuesta.items)
+            $("#actualizarCabin").attr('disabled','disabled');
+            mostrarCabin(respuesta.items)
         }
     });
 }
 
-function mostarCabin(){
+function mostrarCabin(){
     $.ajax({
         dataType: 'json',
         url: "https://g891c341b7d4051-dbciclo3.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/cabin/cabin",
@@ -27,8 +29,8 @@ function mostarCabin(){
                 $("#resultado").append("<td>"+item[i].rooms+"</td>");
                 $("#resultado").append("<td>"+item[i].category_id+"</td>");
                 $("#resultado").append("<td>"+item[i].name+"</td>");
-                $("#resultado").append('<td><button class="btnO btn" onclick="obtenerCabinEspecifica('+item[i].id+')">Traer</button></td>');
-                $("#resultado").append('<td><button class="btnB btn" onclick="borrarCabin('+item[i].id+')">Borrar</button></td>');
+                $("#resultado").append('<td><a class="btnO" onclick="obtenerCabinEspecifica('+item[i].id+')">Detalle</a></td>');
+                $("#resultado").append('<td><button class="btnB" title="Borrar" onclick="borrarCabin('+item[i].id+')">&#10007</button></td>');
                 $("#resultado").append("</tr>");
                 $("#resultado").append("</tbody>");
             }
@@ -91,7 +93,9 @@ function editarCabin(){
             $("#rooms").val("");             
             $("#category_id").val("");             
             $("#name").val("");             
-            traerCabin();             
+            traerCabin(); 
+            $("#id").removeAttr('disabled');
+            $("#guardarCab").removeAttr('disabled');            
             alert("¡Se ha actualizado el registro!")         
         },        
         error: function(jqXHR, textStatus, errorThrown) {
@@ -123,6 +127,9 @@ function borrarCabin(idElemento){
 }
 
 function obtenerCabinEspecifica(id){
+    $("#actualizarCabin").removeAttr('disabled');             
+    $("#id").attr('disabled','disabled');
+    $("#guardarCab").attr('disabled','disabled');
     $.ajax({
         dataType: 'json',
         url: "https://g891c341b7d4051-dbciclo3.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/cabin/cabin/"+id,
@@ -135,6 +142,46 @@ function obtenerCabinEspecifica(id){
             $("#rooms").val(item.rooms);
             $("#category_id").val(item.category_id);
             $("#name").val(item.name);
+        },        
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert("Ha ocurrido un error");
+        }
+    });
+}
+
+function traerClient(){
+    $.ajax({
+        url: "https://g891c341b7d4051-dbciclo3.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/client/client",
+        type: "GET",
+        datatype: "JSON",
+        success:function(respuesta){
+            console.log(respuesta);
+            mostrarClient(respuesta.items)
+        }
+    });
+}
+
+function mostrarClient(){
+    $.ajax({
+        dataType: 'json',
+        url: "https://g891c341b7d4051-dbciclo3.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/client/client",
+        type:'GET',
+        
+        success:function(respuesta) {
+            let item=respuesta.items;
+
+            for(i=0;i<item.length;i++){
+                $("#resultadoClient").append("<tbody>");
+                $("#resultadoClient").append("<tr>");
+                $("#resultadoClient").append("<td>"+item[i].id+"</td>");
+                $("#resultadoClient").append("<td>"+item[i].name+"</td>");
+                $("#resultadoClient").append("<td>"+item[i].email+"</td>");
+                $("#resultadoClient").append("<td>"+item[i].age+"</td>");
+                $("#resultadoClient").append('<td><a class="btnO" onclick="obtenerClientEspecifico('+item[i].id+')">Detalle</a></td>');
+                $("#resultadoClient").append('<td><button class="btnB"  title="Borrar" onclick="borrarClient('+item[i].id+')">&#10007</button></td>');
+                $("#resultadoClient").append("</tr>");
+                $("#resultadoClient").append("</tbody>");
+            }
         },        
         error: function(jqXHR, textStatus, errorThrown) {
             alert("Ha ocurrido un error");
