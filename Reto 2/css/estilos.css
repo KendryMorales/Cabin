@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
-
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,87 +7,125 @@
 
 body{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    /* overflow: scroll;    */
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/paraiso.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    position: absolute;
+    top: 0;
+}
+
+.menu-index{
+    z-index: 10;
+    text-align: left;
+    padding: 5px;
+    position: relative;
+    top: 0;
+    right: 0;
+    border: none;
+    height: 60px;
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: left;
+    padding: 5px;
+    border: none;
+    background-image: radial-gradient(circle at 50% -20.71%, #8ab7cc 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
 }
 
 .titulo{
     font-family: 'Ephesis', cursive, Georgia, 'Times New Roman', Times, serif;
     color: white;
     font-size: 40px;
-    background: #244dd3c5;
-    text-align: center;
-    padding: 5px;
-    /* padding-left: 30px; */
-}
-
-.menu{
-    background: #244dd3a4;
     text-align: left;
-    padding: 5px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    border: none;
+    padding: 2px;
+    padding-left: 30px;
+    width: 50%;
     height: 60px;
-    width: 250px;
-    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.69);
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
 }
 
 .lista{
-    display: flex;
-    width: 100%;
+    width: 50%;
     height: 100%;
-    list-style: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin: auto;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .items{
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .link{
     text-decoration: none;
     color: #fff;
+    font-weight: 900;
 }
 
 .link:hover{
-    color: rgba(245, 224, 32, 0.884);
+    color:#d0dafd;
+    /* color:rgb(214, 226, 43); */
 }
 
 /** MAIN***/
-
-#seccion1{
-    background: #f8f8f8;
-}
-
 .seccion{
     width: 100%;
     height: auto;    
 }
 
 .container{
-    padding: 50px 0;
     width: 90%;
-    height: 100%;
+    max-width: 1000px;
+    height: 890px;
     margin: auto;
     overflow: hidden;
+    padding: 60px 0;
 }
 
 .subtitulo{
-    font-size: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .form{
-    margin: auto;
-    padding: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.textarea {
+    overflow: scroll;
+    resize: none;
 }
 
 .input{
@@ -99,6 +136,7 @@ body{
     margin-bottom: 10px;
     padding-left: 5px;
     outline: none;
+    text-transform: uppercase;
 }
 
 .grupo-input{
@@ -112,7 +150,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .botones{
@@ -120,6 +158,7 @@ body{
     height: 30px;
     text-align: center;
     margin: 10px;
+    cursor: pointer;
 }
 
 .btnB{
@@ -135,10 +174,12 @@ body{
 .btnO{
     color: blue;
     text-align: center;
+    /* background:green; */
 }
 .btnO:hover{
     color: blueviolet;
     cursor: pointer;
+    /* background:rgba(0, 128, 0, 0.685); */
 }
 
 .btnB:hover{
@@ -147,54 +188,94 @@ body{
     cursor: pointer;
 }
 
+/* Estilos de la tabla */
 .tabla{
-    width: 100%;
-    height: auto;
+    max-width: 90%;
+    max-height: 400px;
     margin-top: 45px;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;     
+    overflow-y:auto; 
 }
 
-table{    
-    width: 90%; 
+table {    
+    z-index: 2;
+    width: 100%;
+    height: 200px; 
     margin: auto;
     font-size: 12px;    
     text-align: center;    
     border-collapse: collapse;
-    overflow:auto;  
-    display: table;
+    /* display: table; */
 }
 
-th{     
+th {  
+    position: sticky;
+    top: 0;   
     font-size: 13px;     
     font-weight: normal;     
     padding: 8px;     
-    background: #244dd3c5;
-    border-bottom: 1px solid #fff; 
+    background: #3E94D0;
+    /* border-bottom: 1px solid #fff;  */
     color: #fff; 
     border-collapse: collapse; 
-}   
+    border: 1px solid transparent;
+}    
 
-td{    
+td {    
     padding: 8px;     
-    background: #fff;     
+    background: #FAFAFA;     
     border-bottom: 1px solid #f2f2f2;
     color: #111;    
     border-top: 1px solid transparent; 
     border-collapse: collapse; 
+    /* text-align: center; */
 }
 
-tr:hover td{ 
-    background: #d0dafd; 
-    color: #339; 
+
+/* Estilos para el scroll */
+.tabla::-webkit-scrollbar {
+    -webkit-appearance: none;
 }
 
-footer{
-    background: #244dd3c5;
-    color: #fff;
+.tabla::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.tabla::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.tabla::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.tabla::-webkit-scrollbar-thumb {
+    /* background-color: #797979; */
+    background-color: #79797942;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.tabla::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+/* Pie de pagina */
+.footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background:#3E94D0;
+    border: 1px transparent;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-pie{
     text-align: center;
-    padding: 5px;
+    color: #fff;
+    line-height: 50px;
 }
-
